@@ -13,7 +13,6 @@
         .flex {
             display: flex;
         }
-
         .flex-horizontal-center {
             justify-content: center;
         }
@@ -42,7 +41,11 @@
         context.lineTo(600, i);
         context.stroke();
     }
-    writeCellWeight(10, 5, 500, context);
+    var  matrix = generateArray();
+
+    printValues(matrix, context)
+    
+
 </script>
 
 </html>
