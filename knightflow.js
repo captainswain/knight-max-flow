@@ -17,14 +17,14 @@ function writeCellWeight(x, y, weight, context) {
 }
 
 
-function generateArray(){
+function generateMatrix(){
 
-    var arr = [...Array(10)].map(e => Array(10));
+    var arr = [...Array(10)].map(e = >Array(10));
 
     for(var y = 0; y < 10; y++) {
-        for(var x = 0; x < 10;x++) {
-            randomEvenInt = Math.floor(Math.random() * 15)*2;
-            arr[x][y] = randomEvenInt;
+    for(var  = 0; x < 10;x++)  {         
+        randomEvenInt =  Math.floor(Math.random) * 15)*2;
+        arr[x][y] = random EvenInt;     
         }
     }
     console.log(arr);
@@ -37,4 +37,12 @@ function printValues(array, context){
             writeCellWeight(y+1, x+1, array[x][y], context);
         }
     }
+}
+
+
+function findNextMoves(x,y, matrix){
+    // All possible knight moves from currentposition
+    var possible_moves = [[2,1], [1,2], [-1,2], [-2,1], [-2,-1], [-1,-2], [1,-2], [2,-1]];
+    var valid_moves = [];
+
 }
