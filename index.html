@@ -13,6 +13,7 @@
         .flex {
             display: flex;
         }
+
         .flex-horizontal-center {
             justify-content: center;
         }
@@ -28,23 +29,21 @@
 <script src="knightflow.js"></script>
 
 <script>
+    // setup canvas
     var board_canvas = document.getElementById("board");
     var context = board_canvas.getContext("2d");
     context.strokeStyle = "white";
     context.lineWidth = 2;
 
-    // Draw Board
-    for (var i = 0; i <= 600; i = i + 60) {
-        context.moveTo(i, 0);
-        context.lineTo(i, 600);
-        context.moveTo(0, i);
-        context.lineTo(600, i);
-        context.stroke();
-    }
-    var  matrix = generateArray();
+    // Draw cells
+    drawBoard(context);
 
+    // Generate random matrix
+    var matrix = generateArray();
+
+    // Print weights in grid
     printValues(matrix, context)
-    
+
 
 </script>
 

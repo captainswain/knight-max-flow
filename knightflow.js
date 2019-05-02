@@ -1,3 +1,14 @@
+
+function drawBoard(context) {
+    for (var i = 0; i <= 600; i = i + 60) {
+        context.moveTo(i, 0);
+        context.lineTo(i, 600);
+        context.moveTo(0, i);
+        context.lineTo(600, i);
+        context.stroke();
+    }
+}
+
 function writeCellWeight(x, y, weight, context) {
     context.font = "15px Arial";
     context.fillStyle = "white";
