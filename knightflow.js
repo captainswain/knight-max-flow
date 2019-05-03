@@ -18,8 +18,16 @@ function writeCellWeight(x, y, weight, context) {
 
 function drawCellLine(x1,y1, x2, y2, context){
     context.beginPath();
+    context.globalAlpha = 0.8;
     context.moveTo(((x1+1) * 60) - 27, ((y1+1) * 60) - 27);
     context.lineTo(((x2+1) * 60) - 27, ((y2+1) * 60) - 27);
+    context.stroke();
+
+    context.beginPath();
+    context.arc(((x2+1) * 60) - 27, ((y2+1) * 60) - 27, 3, 0, 2 * Math.PI, false);
+    context.fillStyle = 'white';
+    context.fill();
+    context.strokeStyle = '#grey';
     context.stroke();
 }
 
