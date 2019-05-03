@@ -16,6 +16,15 @@ function writeCellWeight(x, y, weight, context) {
     context.fillText(weight, ((x * 60) - 30), ((y * 60) - 30));
 }
 
+function drawCellLine(x1,y1, x2, y2, context){
+    context.beginPath();
+    context.moveTo((x1 * 60) - 27, (y1 * 60) - 27);
+    context.lineTo((x2 * 60) - 27, (y2 * 60) - 27);
+    context.stroke();
+}
+
+
+
 
 function generateMatrix(){
 
@@ -39,12 +48,21 @@ function printValues(array, context){
     }
 }
 
-
 function findNextMoves(x,y, matrix){
     // All possible knight moves from currentposition
     var possible_moves = [[2,1], [1,2], [-1,2], [-2,1], [-2,-1], [-1,-2], [1,-2], [2,-1]];
     var valid_moves = [];
 
+    for (var i = 0; i < 8; i++){
+        var new_x = x + possible_moves[i][0];
+        var new_y = y + possible_moves[i][1];
+
+        if (matrix[new_y -1][new_x - 1] != null){
+            console.log("This move exists! x=" + new_x + " y = " + new_y);
+            console.log(matrix[new_y -1][new_x - 1]);
+            drawCellLine(x, y, new_x, new_y, context);
+        }
+    }
 
 
 }
