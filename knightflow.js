@@ -119,7 +119,7 @@ function findMaxFlow(matrix, context){
     var current_x = 1;
     var current_y = 2;
     var visitedMatrix = Array(10).fill().map(() => Array(10).fill(false));
-    var max_moves =  Math.random() * (30 - 15) + 15;
+    var max_moves =  Math.floor(Math.random() * (30 - 15) + 15);
     var move_count = 0;
 
     // Set source as visited
@@ -146,6 +146,7 @@ function findMaxFlow(matrix, context){
             // visitedMatrix[current_y][current_x] = true;  
         }
     }   
-
+    document.getElementById("used").innerHTML = "<b>Used Edges:</b> " + move_count;
+    document.getElementById("unused").innerHTML = "<b>Unused Edges:</b> " + (max_moves - move_count);
     console.log("Found the sink! current x=" + current_x + " current y=" + current_y);
 }
